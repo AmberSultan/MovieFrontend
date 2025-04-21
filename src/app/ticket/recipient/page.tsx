@@ -117,7 +117,7 @@ const RecipientPage = () => {
           Print Ticket
         </button>
       </div>
-    </Suspense> {/* Suspense boundary ends */}
+    </Suspense>
   );
 };
 
