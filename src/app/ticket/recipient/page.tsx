@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react"; // Import Suspense here
 import { useSearchParams } from "next/navigation";
 import toast, { Toaster } from 'react-hot-toast';
 import html2canvas from 'html2canvas';
@@ -51,32 +51,23 @@ const RecipientPage = () => {
           floatPrecision: 16 
         });
   
-
         const imgWidth = ticketElement.offsetWidth * 0.264583; // Convert px to mm
         const imgHeight = ticketElement.offsetHeight * 0.264583; // Convert px to mm
   
-        
         const xOffset = 0; 
         const yOffset = 0;
   
-        
         pdf.addImage(imgData, 'PNG', xOffset, yOffset, imgWidth, imgHeight);
         
-        
         pdf.save('movie_ticket.pdf');
-
-        toast.success("Ticket downloaded sucessfully!");
+        toast.success("Ticket downloaded successfully!");
       });
     } else {
       toast.error("Ticket element not found!");
     }
   };
-  
-  
-  
-
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}> {/* Wrap your component here */}
       <Toaster /> {/* Toaster for notifications */}
       <div className="bg-black text-center py-4 text-white text-sm">
         UNLIMITED MOVIES OF YOUR CHOICE
@@ -122,7 +113,7 @@ const RecipientPage = () => {
           Print Ticket
         </button>
       </div>
-    </>
+    </Suspense>
   );
 };
 
