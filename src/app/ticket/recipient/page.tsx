@@ -6,11 +6,13 @@ import toast, { Toaster } from 'react-hot-toast';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf'; 
 
+// Force dynamic rendering to avoid prerendering
+export const dynamic = 'force-dynamic';
+
 const RecipientPage = () => {
   const searchParams = useSearchParams();
   const [ticketDetails, setTicketDetails] = useState<any>(null);
   const [currentDate, setCurrentDate] = useState("");
-
 
   useEffect(() => {
     const ticketData = {
@@ -41,7 +43,6 @@ const RecipientPage = () => {
     const ticketElement = document.getElementById('ticket');
   
     if (ticketElement) {
-      
       html2canvas(ticketElement, { scale: 2 }).then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF({
@@ -62,7 +63,7 @@ const RecipientPage = () => {
 
         pdf.save('movie_ticket.pdf');
 
-        toast.success("Ticket downloaded sucessfully!");
+        toast.success("Ticket downloaded successfully!");
       });
     } else {
       toast.error("Ticket element not found!");
@@ -71,8 +72,8 @@ const RecipientPage = () => {
   
 
   return (
-    <Suspense fallback={<div>Loading...</div>}> {/* Suspense boundary added */}
-      <Toaster /> {/* Toaster for notifications */}
+    <Suspense fallback={<div>Loading...</div>}>
+      <Toaster />
       <div className="bg-black text-center py-4 text-white text-sm">
         UNLIMITED MOVIES OF YOUR CHOICE
       </div>
