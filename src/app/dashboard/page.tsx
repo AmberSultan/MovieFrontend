@@ -20,7 +20,6 @@ export default function Dashboardpage() {
     return (
       <div>
         hello from dashboard page
-        
       </div>
     )
   }

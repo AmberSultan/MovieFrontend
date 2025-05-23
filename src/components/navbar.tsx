@@ -51,7 +51,7 @@ const NavbarLayout: React.FC = () => {
             <nav className="grid gap-2 text-lg font-medium">
               <Link
                 href="/"
-                className="flex items-center gap-2 text-lg font-semibold"
+                className=" flex items-center gap-2 text-lg font-semibold"
               >
                 <Package2 className="h-5 w-5" />
                 <span className="sr-only text-white">FILMAX</span>
@@ -102,7 +102,7 @@ const NavbarLayout: React.FC = () => {
         </Link>
 
         {/* Desktop Navigation Menu */}
-        <nav className="hidden lg:flex flex-1 gap-4 text-lg font-medium">
+        <nav className=" lg:flex flex-1 gap-4 text-lg font-medium">
           <Link href="/" className="flex items-center gap-2 text-lg font-semibold">
             <Package2 className="h-5 w-5" />
             FILMAX
