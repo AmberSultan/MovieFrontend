@@ -62,30 +62,30 @@ const NavbarLayout: React.FC = () => {
               >
                 Home
               </Link>
-              <Link
+              {/* <Link
                 href="/movies"
                 className="mx-[-0.65rem] text-base flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
               >
                 Movie
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 href="/cinema"
                 className="mx-[-0.65rem] text-base flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
               >
                 Cinema
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 href="/experiences"
                 className="mx-[-0.65rem] text-base flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
               >
                 Experiences
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 href="/coming-soon"
                 className="mx-[-0.65rem] text-base flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
               >
                 Coming Soon
-              </Link>
+              </Link> */}
             </nav>
           </SheetContent>
         </div>
