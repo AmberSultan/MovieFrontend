@@ -56,7 +56,7 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card>
             <div className="flex justify-center items-center">
-              <img src={`http://localhost:4001/${item.thumbnail}`} alt={item.title} className="w-full h-32 object-cover"/>
+              <img src={item.thumbnail} alt={item.title} className="w-full h-32 object-cover"/>
             </div>
             <CardTitle>{item.title}</CardTitle>
             <CardDescription className="mt-1 line-clamp-2">

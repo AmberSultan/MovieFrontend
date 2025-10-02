@@ -13,45 +13,28 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import toast, { Toaster } from 'react-hot-toast';
-import { useRouter } from 'next/navigation'; // Import useRouter for navigation
+import { useRouter } from 'next/navigation';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const router = useRouter(); // Initialize useRouter
+  const router = useRouter();
 
-  const handleLogin = async () => {
+  const handleLogin = () => {
     if (!email || !password) {
       toast.error('Please fill in all fields');
       return;
     }
 
-    try {
-      const response = await fetch("http://localhost:4001/api/users/login", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await response.json();
-
-      if (response.status === 401) {
-        toast.error("Invalid credentials.");
-      } else if (response.ok) {
-        // Save the token to local storage
-        localStorage.setItem('authToken', data.token); // Adjust 'data.token' based on your response
-
-        toast.success("Login successful.");
-        router.push('/');
-      } else {
-        toast.error("Login failed.");
-      }
-    } catch (error) {
-      console.error("Login failed", error);
-      toast.error("User not exist.");
+    // Simple validation: check if email contains '@' and password is at least 6 characters
+    if (!email.includes('@') || password.length < 6) {
+      toast.error('Please enter a valid email and password (minimum 6 characters)');
+      return;
     }
+
+    // Simulate successful login
+    toast.success("Login successful.");
+    router.push('/');
   };
 
   return (
@@ -91,7 +74,7 @@ export default function LoginForm() {
             <Button
               type="button"
               className="w-full"
-              onClick={handleLogin} 
+              onClick={handleLogin}
             >
               Login
             </Button>

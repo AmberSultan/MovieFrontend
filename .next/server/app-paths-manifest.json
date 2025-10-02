@@ -1,0 +1,7 @@
+{
+  "/page": "app/page.js",
+  "/ticket/page": "app/ticket/page.js",
+  "/now-playing/[_id]/choose-seat/page": "app/now-playing/[_id]/choose-seat/page.js",
+  "/now-playing/[_id]/page": "app/now-playing/[_id]/page.js",
+  "/ticket/recipient/page": "app/ticket/recipient/page.js"
+}

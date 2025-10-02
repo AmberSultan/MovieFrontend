@@ -111,12 +111,18 @@ const TicketClient = () => {
           </p>
         </div>
       </div>
-      <div className="flex justify-center items-center mt-2 mb-2">
+      <div className="flex gap-[10px] justify-center items-center mt-2 mb-2">
         <button
           onClick={downloadTicket}
           className="w-1/5 bg-red-900 text-center text-white py-2 px-4 rounded hover:bg-red-950"
         >
           Print Ticket
+        </button>
+         <button
+          onClick={() => window.location.href = '/'}
+          className="w-1/5 bg-red-900 text-center text-white py-2 px-4 rounded hover:bg-red-950"
+        >
+          Back to Home
         </button>
       </div>
     </>
